@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apna_bigquery"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "Django>=5.0",
+    "google-cloud-bigquery>=3.25",
+]
+
+[tool.setuptools.packages.find]
+include = ["apna_bigquery*"]
