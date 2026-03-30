@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "apna_bigquery"
+name = "bigquery_lib"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,4 +12,4 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["apna_bigquery*"]
+include = ["bigquery_lib*"]
