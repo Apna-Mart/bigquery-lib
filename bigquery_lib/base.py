@@ -6,12 +6,12 @@ from django.db.backends.base.base import BaseDatabaseWrapper
 from google.oauth2 import service_account
 from django.db.backends.utils import CursorWrapper, CursorDebugWrapper
 
-from apna_bigquery.client import DatabaseClient
-from apna_bigquery.creation import DatabaseCreation
-from apna_bigquery.features import DatabaseFeatures
-from apna_bigquery.introspection import DatabaseIntrospection
-from apna_bigquery.operations import DatabaseOperations
-from apna_bigquery.schema import DatabaseSchemaEditor
+from bigquery_lib.client import DatabaseClient
+from bigquery_lib.creation import DatabaseCreation
+from bigquery_lib.features import DatabaseFeatures
+from bigquery_lib.introspection import DatabaseIntrospection
+from bigquery_lib.operations import DatabaseOperations
+from bigquery_lib.schema import DatabaseSchemaEditor
 
 logger = logging.getLogger("django.db.backends.base")
 

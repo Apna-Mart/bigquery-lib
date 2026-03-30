@@ -1,7 +1,7 @@
 import logging
 
 from django.db import connections, models
-from apna_bigquery.constants import STREAMING, ORM
+from bigquery_lib.constants import STREAMING, ORM
 
 logger = logging.getLogger("django.db.backends.models")
 
