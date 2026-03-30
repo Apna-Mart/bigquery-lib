@@ -51,13 +51,14 @@ class BigQueryCursor:
 
         job = self.client.query(query)
         try:
-            self._results = list(job)
+            result_iter = job.result()
+            self.description = [(field.name,) for field in result_iter.schema] if result_iter.schema else []
+            self._results = list(result_iter)
             self._rowcount = len(self._results)
-            self.description = [(field.name,) for field in job.schema] if job.schema else []
         except Exception as e:
-            logger.error("Error parsing results:", e)
+            logger.error('Error parsing results: %s', e)
             self._results = []
-            self._rowcount = getattr(job, "num_dml_affected_rows", 0) or 0
+            self._rowcount = getattr(job, 'num_dml_affected_rows', 0) or 0
             self.description = []
         return self
 
